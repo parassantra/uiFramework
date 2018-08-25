@@ -18,7 +18,7 @@ public class ChromeBrowser {
 		option.setCapability(ChromeOptions.CAPABILITY, chrome);
 		
 		if(System.getProperty("os.name").contains("Linux")){
-			option.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+			option.addArguments("window-size=1024,768", "--no-sandbox");
 		}
 		return option;
 	}
@@ -34,7 +34,7 @@ public class ChromeBrowser {
 			return new ChromeDriver(cap);
 		}
 		else if(System.getProperty("os.name").contains("Linux")){
-			System.setProperty("webdriver.chrome.driver", "/usr/bin/chrome");
+			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			return new ChromeDriver(cap);
 		}
 		return null;
